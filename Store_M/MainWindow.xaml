@@ -5,30 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Store_M"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="43*"/>
-            <RowDefinition Height="167*"/>
-        </Grid.RowDefinitions>
-        <Label Content="Виробник&#xD;&#xA;" HorizontalAlignment="Left" Margin="34,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.101,1.701" Height="25">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.361"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="220,12,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged" RenderTransformOrigin="-1.582,3.656"/>
-        <TextBox Name="Output" HorizontalAlignment="Left" Height="23" Margin="142,289,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="340,289,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <DataGrid HorizontalAlignment="Left" Height="256" Margin="10,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100" SelectionChanged="DataGrid_SelectionChanged">
+        <DataGrid Name="mEdicine" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn/>
+                <DataGridTextColumn Binding="{Binding Path = Name}" IsReadOnly="False" Header="Назва" Width="180"/>
+                <DataGridTextColumn Binding="{Binding Path = Izm}" IsReadOnly="False" Header="Од.Вим" Width="50"/>
+                <DataGridTextColumn Binding="{Binding Path = Come}" IsReadOnly="False" Header="Прихід" Width="80"/>
+                <DataGridTextColumn Binding="{Binding Path = Go}" IsReadOnly="False" Header="Розхід" Width="80"/>
+                <DataGridTextColumn Binding="{Binding Path = Still}" IsReadOnly="False" Header="Залишок" Width="80"/>
+                <DataGridTextColumn Binding="{Binding Path = Date}" IsReadOnly="False" Header="Термін придатності" Width="180"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="100" Margin="529,12,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="100"/>
     </Grid>
 </Window>
